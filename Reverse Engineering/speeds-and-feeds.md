@@ -6,7 +6,7 @@ There is something on my shop network running at `nc mercury.picoctf.net 20301`,
 
 连接到服务器，发现程序打印了大量数据。
 
-![image-20210706220833482](speeds and feeds.assets/image-20210706220833482.png)
+![image-20210706220833482](speeds-and-feeds.assets/image-20210706220833482.png)
 
 直接在Shell中分析有点困难，先使用脚本将其保存下来。
 
@@ -19,7 +19,7 @@ with open('recvdata', 'w', encoding='utf-8') as f:
     f.write(data.decode())
 ```
 
-![image-20210706222519852](speeds and feeds.assets/image-20210706222519852.png)
+![image-20210706222519852](speeds-and-feeds.assets/image-20210706222519852.png)
 
 根据保存下来的文件中的关键字进行搜索，发现这其实是数控机床的控制指令（？）。
 
@@ -64,4 +64,5 @@ new_img.show()
 
 最终得到的图像中即是Flag。
 
-![image-20210706222956795](speeds and feeds.assets/image-20210706222956795.png)
+![image-20210706222956795](speeds-and-feeds.assets/image-20210706222956795.png)
+
