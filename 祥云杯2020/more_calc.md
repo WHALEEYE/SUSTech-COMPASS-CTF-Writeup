@@ -27,7 +27,7 @@ So we can replace `-1` and then we got
 
 ![image-20210821012927975](more_calc.assets/image-20210821012927975.png)
 
-According to **Fermat's Little Theorem**, if $p$ is prime and $i$ and $p$ are relatively prime, $i^{p-1}\equiv1\pmod p$, so we got
+According to **Fermat's Little Theorem** we got
 
 ![image-20210821012950126](more_calc.assets/image-20210821012950126.png)
 
