@@ -23,7 +23,7 @@ For each of the `i` we have
 
 ![image-20210821012909103](more_calc.assets/image-20210821012909103.png)
 
-So we can replace $-1$ with $\frac{2i}{p}\binom{p}{2i}$ and then we got
+So we can replace `-1` and then we got
 
 ![image-20210821012927975](more_calc.assets/image-20210821012927975.png)
 
@@ -31,7 +31,7 @@ According to **Fermat's Little Theorem**, if $p$ is prime and $i$ and $p$ are re
 
 ![image-20210821012950126](more_calc.assets/image-20210821012950126.png)
 
-$\sum_{i=1}^{\frac{p-1}{2}}\binom{p}{2i}$ represents the count of possible cases to combine `objects of even number` from `p objects`, but $0$ is not included.
+The accumulation represents the count of possible cases to combine `objects of even number` from `p objects`, but `0` is not included.
 
 The count of possible cases to combine  `objects of even number` and `odd number` from `p objects` is the same, which means
 
