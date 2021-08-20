@@ -14,50 +14,41 @@ Open the script, we can find that `q` is generated in this way:
 Obviously it is not practical to directly calculate `s`, we need another way to calculate `s`.
 
 We can present `s` in the following way.
-$$
-s=\sum_{i=1}^{\frac{p-1}{2}}i^{p-2}\bmod p
-$$
+
+![image-20210821012826420](more_calc.assets/image-20210821012826420.png)
 
 To continue the deduction, we need to introduce a lemma.
 
 For each of the `i` we have
-$$
-\begin{equation}
-\begin{aligned}
-\binom{p}{2i}&=\frac{p(p-1)(p-2)\cdots(p-(2i-1))}{2i!}\\
-\frac{2i}{p}\binom{p}{2i}&=\frac{(p-1)(p-2)\cdots(p-(2i-1))}{(2i-1)!}\\
-&\equiv\frac{(-1)(-2)\cdots(-(2i-1))}{(2i-1)!}&\pmod p\\
-&=\frac{-(2i-1)!}{(2i-1)!}&\pmod p\\
-&=-1&\pmod p
-\end{aligned}
-\end{equation}
-$$
+
+![image-20210821012909103](more_calc.assets/image-20210821012909103.png)
+
 So we can replace $-1$ with $\frac{2i}{p}\binom{p}{2i}$ and then we got
-$$
-s=\sum_{i=1}^{\frac{p-1}{2}}i^{p-2}\bmod p=(-\sum_{i=1}^{\frac{p-1}{2}}-i^{p-2})\bmod p=(-\sum_{i=1}^{\frac{p-1}{2}}(i^{p-2}\cdot\frac{2i}{p}\binom{p}{2i}))\bmod p=(-\frac{2}{p}\sum_{i=1}^{\frac{p-1}{2}}(i^{p-1}\cdot\binom{p}{2i}))\bmod p
-$$
+
+![image-20210821012927975](more_calc.assets/image-20210821012927975.png)
+
 According to **Fermat's Little Theorem**, if $p$ is prime and $i$ and $p$ are relatively prime, $i^{p-1}\equiv1\pmod p$, so we got
-$$
-s=(-\frac{2}{p}\sum_{i=1}^{\frac{p-1}{2}}(i^{p-1}\cdot\binom{p}{2i}))\bmod p=(-\frac{2}{p}\sum_{i=1}^{\frac{p-1}{2}}\binom{p}{2i})\bmod p
-$$
+
+![image-20210821012950126](more_calc.assets/image-20210821012950126.png)
+
 $\sum_{i=1}^{\frac{p-1}{2}}\binom{p}{2i}$ represents the count of possible cases to combine `objects of even number` from `p objects`, but $0$ is not included.
 
 The count of possible cases to combine  `objects of even number` and `odd number` from `p objects` is the same, which means
-$$
-\sum_{i=0}^{\frac{p-1}{2}}\binom{p}{2i}=\sum_{i=0}^{\frac{p-1}{2}}\binom{p}{2i+1}
-$$
+
+![image-20210821013029060](more_calc.assets/image-20210821013029060.png)
+
 And we can also know that
-$$
-\sum_{i=0}^{\frac{p-1}{2}}\binom{p}{2i}+\sum_{i=0}^{\frac{p-1}{2}}\binom{p}{2i+1}=\sum_{i=0}^{p}\binom{p}{i}=2^p
-$$
+
+![image-20210821013055572](more_calc.assets/image-20210821013055572.png)
+
 So we got
-$$
-\sum_{i=1}^{\frac{p-1}{2}}\binom{p}{2i}=\sum_{i=0}^{\frac{p-1}{2}}\binom{p}{2i}-1=\frac{2^p}{2}-1=2^{p-1}-1
-$$
+
+![image-20210821013136638](more_calc.assets/image-20210821013136638.png)
+
 Back to the previous equation, we got
-$$
-s=(-\frac{2}{p}\cdot(2^{p-1}-1))\bmod p=\frac{-(2^p-2)\bmod p^2}{p}=\frac{p^2-(2^p\bmod p^2-2)}{p}=p-\frac{2^p\bmod p^2-2}{p}
-$$
+
+![image-20210821013149952](more_calc.assets/image-20210821013149952.png)
+
 By this expression of `s`, we can get the `q` and decrypt the RSA to get the flag.
 
 The script is shown below.
