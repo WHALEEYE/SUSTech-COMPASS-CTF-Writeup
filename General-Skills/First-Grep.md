@@ -1,12 +1,14 @@
 # First Grep
 
+### Description
+
 Can you find the flag in [file](http://ctf.infury.org:8000/files/eb24df39326513c7a5f9a6a7ae4f0343/file)? This would be really tedious to look through manually, something tells me there is a better way.
 
 ##### Hint
 
 >grep [tutorial](https://ryanstutorials.net/linuxtutorial/grep.php)
 
-## WP
+### Writeup
 
 下载文件后，如果直接查看文件内容，发现信息量较大。
 
